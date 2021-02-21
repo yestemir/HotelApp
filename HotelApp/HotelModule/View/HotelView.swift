@@ -34,7 +34,7 @@ class HotelView: UIView {
     var hotels = [Hotels.MainData]()
     
      var delegate: HotelDelegate!
-    
+    hotel
     override init(frame: CGRect = .zero) {
         super .init(frame: frame)
         self.backgroundColor = .white
@@ -84,6 +84,7 @@ class HotelView: UIView {
     }
 }
 
+//MARK: - TableViewDelegates
 
 extension HotelView: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

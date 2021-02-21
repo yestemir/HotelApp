@@ -11,7 +11,6 @@ class HotelViewController: UIViewController {
     
     lazy var sortByRooms: UIButton = {
         let button = UIButton()
-        button.setImage(Constants.bed, for: .normal)
         button.addTarget(self, action: #selector(sortByRoomsPressed), for: .touchUpInside)
         return button
     }()
@@ -23,7 +22,6 @@ class HotelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Hotels"
-        navigationController?.isNavigationBarHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortByRoomsPressed))
         self.view.backgroundColor = .white
         hotelView.delegate = self

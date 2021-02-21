@@ -27,8 +27,8 @@ extension APIService: TargetType {
             return "0777.json"
         case .getHotelImage(let imageName):
             return "\(imageName)"
-        case .getHotelDetails(let hotelID):
-            return "\(hotelID).json"
+        case .getHotelDetails(let hotel):
+            return "\(hotel).json"
         }
     }
     

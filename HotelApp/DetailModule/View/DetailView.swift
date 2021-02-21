@@ -82,9 +82,6 @@ class DetailsView: UIView {
         titleLabel.text = data.name
         addressLabel.text = data.address
         suitesAvailabilityLabel.text = String("Available rooms: \(data.suites_availability)")
-        if HotelImage.sharedInstance.image == UIImage(){
-            self.hotelImage.image = Constants.noImage
-        }
     }
     
     private func setup(){
