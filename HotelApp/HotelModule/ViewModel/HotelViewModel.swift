@@ -6,37 +6,53 @@
 //
 
 import Foundation
-import UIKit
+import Moya
 
-class HotelViewModel {
-    // MARK: - Initialization
-    init(model: [HotelModel]? = nil) {
-        if let inputModel = model {
-            hotels = inputModel
+protocol HomeViewModelProtocol {
+    var updateViewData: ((Hotels)->())? { get set }
+    func startFetching()
+}
+
+final class HomeViewModel: HomeViewModelProtocol{
+    var updateViewData: ((Hotels) -> ())?
+    let provider = MoyaProvider<APIService>()
+    
+    var hotels = [Hotels.MainData]()
+    
+    init() {
+        updateViewData?(.initial)
+    }
+    
+    func sortbyRooms(){
+        hotels.sort {
+            $0.suites_availability.components(separatedBy: ":").count > $1.suites_availability.components(separatedBy: ":").count
+        }
+        
+        
+        self.updateViewData?(.success(hotels))
+    }
+    
+    
+    func startFetching() {
+        updateViewData?(.loading)
+        provider.request(.getHotels) { (result) in
+            switch result{
+            case .success(let response):
+                do {
+                    let hotelResponse = try JSONDecoder().decode([Hotels.MainData].self, from: response.data)
+                    self.updateViewData?(.success(hotelResponse))
+                    self.hotels = hotelResponse
+                } catch let error {
+                    print(error)
+                    self.updateViewData?(.failure(error))
+                }
+            case .failure(let error):
+                print("Request Error message: \(error.localizedDescription)")
+                self.updateViewData?(.failure(error))
+            }
         }
     }
-    var hotels = [HotelModel]()
+    
+    
 }
 
-extension HotelViewModel {
-    func fetchHotels(completion: @escaping (Result<[HotelModel], Error>) -> Void) {
-        
-        HTTPManager.shared.get(urlString: baseUrl + hotelsExtensionURL, completionBlock: { [weak self] result in
-            guard let self = self else {return}
-            
-            switch result {
-            case .failure(let error):
-                print ("failure", error)
-            case .success(let dta) :
-                let decoder = JSONDecoder()
-                do
-                {
-                    self.hotels = try decoder.decode([HotelModel].self, from: dta)
-                    completion(.success(try decoder.decode([HotelModel].self, from: dta)))
-                } catch {
-                    
-                }
-            }
-        })
-    }
-}

@@ -3,37 +3,50 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		360B176125E130C2006BE051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B176025E130C2006BE051 /* AppDelegate.swift */; };
 		360B176325E130C2006BE051 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B176225E130C2006BE051 /* SceneDelegate.swift */; };
-		360B176525E130C2006BE051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B176425E130C2006BE051 /* ViewController.swift */; };
+		360B176525E130C2006BE051 /* HotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B176425E130C2006BE051 /* HotelViewController.swift */; };
 		360B176A25E130C4006BE051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360B176925E130C4006BE051 /* Assets.xcassets */; };
 		360B176D25E130C4006BE051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360B176B25E130C4006BE051 /* LaunchScreen.storyboard */; };
 		360B177A25E13128006BE051 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B177925E13128006BE051 /* Constants.swift */; };
-		360B177E25E1313F006BE051 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B177D25E1313F006BE051 /* HTTPManager.swift */; };
 		360B178125E13158006BE051 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B178025E13158006BE051 /* HotelModel.swift */; };
 		360B178425E13174006BE051 /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B178325E13174006BE051 /* HotelViewModel.swift */; };
 		360B179125E13291006BE051 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B179025E13291006BE051 /* DetailViewController.swift */; };
-		360B179725E134B4006BE051 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B179625E134B4006BE051 /* SpinnerViewController.swift */; };
+		3658AC1D25E2A50200388AFE /* HotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658AC1C25E2A50200388AFE /* HotelTableViewCell.swift */; };
+		3658AC2025E2A51800388AFE /* HotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658AC1F25E2A51800388AFE /* HotelView.swift */; };
+		3658AC2425E2A54500388AFE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658AC2325E2A54500388AFE /* APIService.swift */; };
+		3658AC2A25E2A57400388AFE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658AC2925E2A57400388AFE /* DetailViewModel.swift */; };
+		3658AC2D25E2A59900388AFE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658AC2C25E2A59900388AFE /* DetailView.swift */; };
+		3658AC3025E2A5C600388AFE /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658AC2F25E2A5C600388AFE /* Detail.swift */; };
+		3658AC3725E2A71500388AFE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3658AC3625E2A71500388AFE /* Moya */; };
+		3658AC3925E2A71500388AFE /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3658AC3825E2A71500388AFE /* ReactiveMoya */; };
+		3658AC3B25E2A71500388AFE /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3658AC3A25E2A71500388AFE /* RxMoya */; };
+		3658AC3F25E2AB8600388AFE /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658AC3E25E2AB8600388AFE /* Delegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		360B175D25E130C2006BE051 /* HotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		360B176025E130C2006BE051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		360B176225E130C2006BE051 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		360B176425E130C2006BE051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		360B176425E130C2006BE051 /* HotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewController.swift; sourceTree = "<group>"; };
 		360B176925E130C4006BE051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		360B176C25E130C4006BE051 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		360B176E25E130C4006BE051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		360B177925E13128006BE051 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		360B177D25E1313F006BE051 /* HTTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		360B178025E13158006BE051 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
 		360B178325E13174006BE051 /* HotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewModel.swift; sourceTree = "<group>"; };
 		360B179025E13291006BE051 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		360B179625E134B4006BE051 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		3658AC1C25E2A50200388AFE /* HotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelTableViewCell.swift; sourceTree = "<group>"; };
+		3658AC1F25E2A51800388AFE /* HotelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelView.swift; sourceTree = "<group>"; };
+		3658AC2325E2A54500388AFE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		3658AC2925E2A57400388AFE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		3658AC2C25E2A59900388AFE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3658AC2F25E2A5C600388AFE /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		3658AC3E25E2AB8600388AFE /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3658AC3B25E2A71500388AFE /* RxMoya in Frameworks */,
+				3658AC3725E2A71500388AFE /* Moya in Frameworks */,
+				3658AC3925E2A71500388AFE /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				360B178A25E131BF006BE051 /* SupportingFiles */,
+				3658AC1725E2A47800388AFE /* DetailModule */,
 				360B178625E13192006BE051 /* HotelModule */,
 				360B176E25E130C4006BE051 /* Info.plist */,
 			);
@@ -86,9 +103,9 @@
 		360B178725E1319A006BE051 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				360B176425E130C2006BE051 /* ViewController.swift */,
-				360B179625E134B4006BE051 /* SpinnerViewController.swift */,
-				360B179025E13291006BE051 /* DetailViewController.swift */,
+				360B176425E130C2006BE051 /* HotelViewController.swift */,
+				3658AC1C25E2A50200388AFE /* HotelTableViewCell.swift */,
+				3658AC1F25E2A51800388AFE /* HotelView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,7 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				360B178025E13158006BE051 /* HotelModel.swift */,
-				360B177D25E1313F006BE051 /* HTTPManager.swift */,
+				3658AC2325E2A54500388AFE /* APIService.swift */,
+				3658AC3E25E2AB8600388AFE /* Delegates.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +140,41 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		3658AC1725E2A47800388AFE /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				3658AC1A25E2A48900388AFE /* ModelView */,
+				3658AC1825E2A48000388AFE /* View */,
+				3658AC1925E2A48400388AFE /* Model */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		3658AC1825E2A48000388AFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				360B179025E13291006BE051 /* DetailViewController.swift */,
+				3658AC2C25E2A59900388AFE /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3658AC1925E2A48400388AFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3658AC2F25E2A5C600388AFE /* Detail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3658AC1A25E2A48900388AFE /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				3658AC2925E2A57400388AFE /* DetailViewModel.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +191,11 @@
 			dependencies = (
 			);
 			name = HotelApp;
+			packageProductDependencies = (
+				3658AC3625E2A71500388AFE /* Moya */,
+				3658AC3825E2A71500388AFE /* ReactiveMoya */,
+				3658AC3A25E2A71500388AFE /* RxMoya */,
+			);
 			productName = HotelApp;
 			productReference = 360B175D25E130C2006BE051 /* HotelApp.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 360B175425E130C2006BE051;
+			packageReferences = (
+				3658AC3525E2A71500388AFE /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 360B175E25E130C2006BE051 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,14 +252,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				360B176525E130C2006BE051 /* ViewController.swift in Sources */,
+				360B176525E130C2006BE051 /* HotelViewController.swift in Sources */,
 				360B176125E130C2006BE051 /* AppDelegate.swift in Sources */,
-				360B177E25E1313F006BE051 /* HTTPManager.swift in Sources */,
+				3658AC3F25E2AB8600388AFE /* Delegates.swift in Sources */,
 				360B176325E130C2006BE051 /* SceneDelegate.swift in Sources */,
 				360B178125E13158006BE051 /* HotelModel.swift in Sources */,
 				360B178425E13174006BE051 /* HotelViewModel.swift in Sources */,
+				3658AC1D25E2A50200388AFE /* HotelTableViewCell.swift in Sources */,
+				3658AC2D25E2A59900388AFE /* DetailView.swift in Sources */,
+				3658AC3025E2A5C600388AFE /* Detail.swift in Sources */,
+				3658AC2A25E2A57400388AFE /* DetailViewModel.swift in Sources */,
+				3658AC2425E2A54500388AFE /* APIService.swift in Sources */,
+				3658AC2025E2A51800388AFE /* HotelView.swift in Sources */,
 				360B177A25E13128006BE051 /* Constants.swift in Sources */,
-				360B179725E134B4006BE051 /* SpinnerViewController.swift in Sources */,
 				360B179125E13291006BE051 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +459,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3658AC3525E2A71500388AFE /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3658AC3625E2A71500388AFE /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3658AC3525E2A71500388AFE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		3658AC3825E2A71500388AFE /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3658AC3525E2A71500388AFE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		3658AC3A25E2A71500388AFE /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3658AC3525E2A71500388AFE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 360B175525E130C2006BE051 /* Project object */;
 }
