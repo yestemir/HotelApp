@@ -11,8 +11,6 @@ class DetailViewController: UIViewController {
     
     private var viewModel = DetailsViewModel()
     var detailsView = DetailsView()
-    
-    var mainVC = HotelViewController()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +23,6 @@ class DetailViewController: UIViewController {
     }
     
     func updateView(){
-        viewModel.updateViewData = { [weak self] viewData in
-            self?.detailsView.hotelsData = viewData
-        }
-    }
-    
-    func updateImage(){
         viewModel.updateViewData = { [weak self] viewData in
             self?.detailsView.hotelsData = viewData
         }

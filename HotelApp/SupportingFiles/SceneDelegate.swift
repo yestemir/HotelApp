@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         //3
         let nav = UINavigationController()
-        nav.viewControllers = [HotelViewController()]
+        nav.viewControllers = [HotelsViewController()]
         window?.rootViewController = nav
         
         //4

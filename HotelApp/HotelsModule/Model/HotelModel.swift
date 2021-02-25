@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 enum Hotels {
     case initial
     case loading
     case success([MainData])
     case failure(Error)
+    case updateImage([UIImage], [MainData])
     
     struct MainData: Decodable{
         let id: Int
@@ -21,6 +23,7 @@ enum Hotels {
         let distance: Double
         let suites_availability: String
     }
+    
 }
 
 

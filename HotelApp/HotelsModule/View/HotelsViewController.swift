@@ -7,7 +7,9 @@
 
 import UIKit
 
-class HotelViewController: UIViewController {
+class HotelsViewController: UIViewController {
+    
+    var isSorted: Bool = false
     
     lazy var sortByRooms: UIButton = {
         let button = UIButton()
@@ -37,9 +39,15 @@ class HotelViewController: UIViewController {
     }
     
     @objc func sortByRoomsPressed(){
-        viewModel.sortbyRooms()
+        if !isSorted {
+            viewModel.sortbyRooms()
+            isSorted = true
+        }else{
+            viewModel.unSort()
+            isSorted = false
+        }
     }
-  
+    
     private func setup(){
         view.addSubview(hotelView)
         view.addSubview(sortByRooms)
@@ -51,12 +59,12 @@ class HotelViewController: UIViewController {
         hotelView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         hotelView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
-
+    
 }
 
 //MARK: - HotelDelegate
 
-extension HotelViewController: HotelDelegate{
+extension HotelsViewController: HotelDelegate {
     func goToDetails(hotelID: Int) {
         let detailsViewController = DetailViewController()
         detailsViewController.getHotelID(hotelID: hotelID)

@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import UIKit
 
 protocol DetailViewModelProtocol {
     var updateViewData: ((HotelDetail)->())? { get set }
@@ -50,12 +51,9 @@ final class DetailsViewModel: DetailViewModelProtocol{
             switch result{
             case .success(let response):
                 do {
-                    HotelImage.sharedInstance.image = try response.mapImage()
-                    self.updateViewData?(.success(hotelResponse))
+                    let image = UIImage(data: response.data) ?? UIImage(named: "image")
+                    self.updateViewData?(.updateImage(image!, hotelResponse))
                     
-                } catch let error {
-                    print("There is no image: \(error)")
-                    self.updateViewData?(.success(hotelResponse))
                 }
             case .failure(let error):
                 print("Request Error message: \(error.localizedDescription)")

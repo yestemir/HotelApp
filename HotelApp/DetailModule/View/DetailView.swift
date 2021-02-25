@@ -10,6 +10,12 @@ import UIKit
 
 class DetailsView: UIView {
     
+    var hotelsData: HotelDetail = .initial{
+        didSet{
+            setNeedsLayout()
+        }
+    }
+    
     lazy var hotelImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -43,11 +49,7 @@ class DetailsView: UIView {
         return activityIndicator
     }()
    
-    var hotelsData: HotelDetail = .initial{
-        didSet{
-            setNeedsLayout()
-        }
-    }
+    
     
     
     override init(frame: CGRect = .zero) {
@@ -60,6 +62,7 @@ class DetailsView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    var data: HotelDetail.MainData?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -70,15 +73,20 @@ class DetailsView: UIView {
             self.activityIndicator.isHidden = false
         case .success(let success):
             self.activityIndicator.isHidden = true
+            data = success
             self.update(viewData: success)
         case .failure:
             self.activityIndicator.isHidden = true
+            self.hotelImage.image = UIImage(named: "image")
+        case .updateImage(let image, let success):
+            self.activityIndicator.isHidden = true
+            self.hotelImage.image = image
+            self.update(viewData: success)
         }
     }
     
     private func update(viewData: HotelDetail.MainData?){
         guard let data = viewData  else { return }
-        self.hotelImage.image = HotelImage.sharedInstance.image
         titleLabel.text = data.name
         addressLabel.text = data.address
         suitesAvailabilityLabel.text = String("Available rooms: \(data.suites_availability)")

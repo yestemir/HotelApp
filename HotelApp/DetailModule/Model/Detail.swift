@@ -13,6 +13,7 @@ enum HotelDetail {
     case loading
     case success(MainData)
     case failure(Error)
+    case updateImage(UIImage, MainData)
     
     struct MainData: Codable{
         let id: Int
@@ -23,9 +24,4 @@ enum HotelDetail {
         let suites_availability: String
         let image: String?
     }
-}
-
-class HotelImage {
-    static let sharedInstance = HotelImage()
-    var image = UIImage()
 }

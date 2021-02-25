@@ -7,9 +7,21 @@
 
 import UIKit
 
+protocol HotelImageDelegate {
+    func getImage(index: Int)
+}
+
 class HotelView: UIView {
     
+    var delegate1: HotelImageDelegate!
+    
     var viewData: Hotels = .initial{
+        didSet{
+            setNeedsLayout()
+        }
+    }
+    
+    var imageData: UIImage? = nil {
         didSet{
             setNeedsLayout()
         }
@@ -20,7 +32,7 @@ class HotelView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
-        tableView.register(HotelTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(HotelsTableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
     
@@ -32,9 +44,9 @@ class HotelView: UIView {
     }()
     
     var hotels = [Hotels.MainData]()
+    var images = [UIImage]()
+    var delegate: HotelDelegate!
     
-     var delegate: HotelDelegate!
-    hotel
     override init(frame: CGRect = .zero) {
         super .init(frame: frame)
         self.backgroundColor = .white
@@ -63,10 +75,14 @@ class HotelView: UIView {
         case .failure:
             tableView.isHidden = true
             self.activityIndicator.isHidden = true
+        case .updateImage(let images, let hotels):
+             tableView.isHidden = false
+            self.activityIndicator.isHidden = true
+            self.images = images
+            self.hotels = hotels
+            tableView.reloadData()
         }
     }
-    
-  
     
     private func setup(){
         self.addSubview(tableView)
@@ -93,16 +109,24 @@ extension HotelView: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
-            HotelTableViewCell
+            HotelsTableViewCell
         let hotel = hotels[indexPath.row]
         cell.titleLabel.text = hotel.name
+        if images.count > indexPath.row {
+            cell.imgView.image = images[indexPath.row]
+        }
+        
+        
         return cell
     
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        HotelImage.sharedInstance.image = UIImage()
         delegate?.goToDetails(hotelID: hotels[indexPath.row].id)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 }
